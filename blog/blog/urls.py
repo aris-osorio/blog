@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from publicaciones.urls import publicaciones_list
+from comentarios.urls import comentarios_list
+from tags.urls import tags_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('publicaciones/', publicaciones_list, name='publicaciones-list'),
+    path('comentarios/', comentarios_list, name='comentarios-list'),
+    path('tags/', tags_list, name='tags-list'),
 ]
