@@ -1,7 +1,7 @@
 from publicaciones.views import PublicacionesViewSet
-from rest_framework import renderers
+from rest_framework.routers import DefaultRouter
 
-publicaciones_list = PublicacionesViewSet.as_view({
-    'get': 'list',
-    'post': 'create'
-})
+router = DefaultRouter()
+router.register(r'', PublicacionesViewSet)
+
+urlpatterns = router.urls

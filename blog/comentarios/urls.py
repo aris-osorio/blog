@@ -1,7 +1,7 @@
 from comentarios.views import ComentariosViewSet
-from rest_framework import renderers
+from rest_framework.routers import DefaultRouter
 
-comentarios_list = ComentariosViewSet.as_view({
-    'get': 'list',
-    'post': 'create'
-})
+router = DefaultRouter()
+router.register(r'', ComentariosViewSet)
+
+urlpatterns = router.urls
