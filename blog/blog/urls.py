@@ -15,11 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from tags.urls import tags_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('publicaciones/', include('publicaciones.urls')),
     path('comentarios/', include('comentarios.urls')),
-    path('tags/', tags_list, name='tags-list'),
+    path('tags/', include('tags.urls')),
 ]

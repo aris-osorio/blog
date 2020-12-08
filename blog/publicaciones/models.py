@@ -9,7 +9,7 @@ class Publicacion(models.Model):
     modificado = models.DateTimeField(auto_now=True)
     texto = models.CharField(max_length = 200)
 
-    tag = models.ManyToManyField(Tag, related_name='tag')
+    tag = models.ManyToManyField(Tag, related_name='publicaciones')
 
     def __str__(self):
         return self.titulo

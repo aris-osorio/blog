@@ -1,7 +1,7 @@
-from tags.views import TagsViewSet
-from rest_framework import renderers
+from  tags.views import TagsViewSet
+from rest_framework.routers import DefaultRouter
 
-tags_list = TagsViewSet.as_view({
-    'get': 'list',
-    'post': 'create',
-})
+router = DefaultRouter()
+router.register(r'', TagsViewSet)
+
+urlpatterns = router.urls
